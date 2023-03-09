@@ -506,7 +506,7 @@ def draw_floor(state, conf, ax=None, plotted_layer=False, params={}):
 
         if "update" in conf:
             vmax, cmap= 3, colors.ListedColormap(["w", [0.2, .7, 0], [1, 0, 0.2], [0, 0.3, 0.3]])
-            if conf["update"] is "forest_fire":
+            if conf["update"] == "forest_fire":
                 vmax, cmap = 3, colors.ListedColormap([[.9, .9, .9], [0, .7, 0.1], [0.7, 0.0, 0.1], [0, 0.3, 0.3]])
         if "areas" in conf["floor"]:
             vmax, cmap = 4, colors.ListedColormap(["w", [.0, .0, .7], [.7, .1, .1], [.2, .9, .2], [.8, .9, 0]])
