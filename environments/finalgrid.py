@@ -1353,8 +1353,8 @@ class FinalGrid():
 
         if "exit" in mode:
             if mode["exit"] == "dynaq":
-                self.floor[1, -2] += 1
-                self.floor[3, 1] = 0
+                self.floor[3, -3] += 1
+                self.floor[-3, 1] = 0
             else:
                 self.floor[int(self.rows/2), -2] += 1
 
@@ -1552,16 +1552,12 @@ class FinalGrid():
                     self.walls[-3, 0] = 1  # agent initial position
 
         if "dynaq" in mode:
-            #self.walls[3:-4,1] = 1
-            #self.walls[3:-2,2] = 1
 
-            self.walls[2:5,3] = 1
-            self.walls[5,6] = 1
-            self.walls[1:4,8] = 1
-            #self.walls[4:-1,4] = 1
-
-            #self.walls[2:-2,6] = 1
-            #self.walls[2,7] = 1
+            self.walls[2:6,3] = 1
+            self.walls[6,3:6] = 1
+            self.walls[4,6:11] = 1
+            self.walls[4:8,11] = 1
+            self.walls[-4:-1,9] = 1
 
         if "tolman_detour" in mode:
             self.walls[0:2,0] = 1
